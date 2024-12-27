@@ -70,5 +70,5 @@
         </tbody>
     </table>
        
-           
+    @include('roleassign::layouts.pagination', ['paginator' => $permissions])  
 @endsection

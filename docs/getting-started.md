@@ -1,6 +1,7 @@
 # Getting Started
 
 ## Description
+
 The ACL Package for Laravel provides an easy way to manage roles and permissions.
 
 ## Installation
@@ -12,7 +13,6 @@ composer require codersgarden/roleassign:dev-main
 ```
 
 After installation, add the service provider to your `boostrap/provider.php` file (if you are not using auto-discovery):
-
 
 ```php
 'providers' => [
@@ -64,27 +64,28 @@ ACL_USERS=['admin@yopmail.com','manager@yopmail.com']
 
 ```
 
-
-
-### Use Route 
-
+### Use Route
 
 This route is used for the ACL dashboard.
-
 
 ```env
 route('acl/roles')
 
 ```
 
-
 ### Role ID Requirement in User Table
-
 
 The `role_id` column is mandatory in the `users` table
 
+### User Mdel
 
+This relationship is required in the user model:
 
+```user mode
 
+public function role()
+{
+    return $this->belongsTo(Role::class, 'role_id', 'id');
+}
 
-
+```
