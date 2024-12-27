@@ -78,4 +78,13 @@ route('acl/roles')
 ```
 
 
+### Role ID Requirement in User Table
+
+
+The `role_id` column is mandatory in the `users` table
+
+
+
+
+
 
