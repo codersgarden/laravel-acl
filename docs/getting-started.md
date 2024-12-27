@@ -81,7 +81,7 @@ The `role_id` column is mandatory in the `users` table
 
 This relationship is required in the user model:
 
-```user mode
+```user Model
 
 public function role()
 {
