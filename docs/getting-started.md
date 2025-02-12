@@ -52,6 +52,9 @@ This will create a `config/custom.php` file in your Laravel application where yo
 ```php
 return [
     'acl_users' => env('ACL_USERS', ''),
+    'logo' => 'asset/images/abc.jpg',
+    'fallbackUrl'=>'index',
+    'logo_width' =>100,
 ];
 ```
 

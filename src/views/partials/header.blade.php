@@ -2,19 +2,15 @@
 
     <div class="container-fluid">
         <a class="navbar-brand ms-5" href="#">
-            <img src="{{ url('roleassign-logo') }}" alt="Logo" class="mb-2">
+            <img src="{{ config('custome.logo') ? asset(config('custome.logo')) : url('roleassign-logo') }}"
+                width="{{ config('custome.logo_width') }}" class="mb-2" alt="Logo">
         </a>
-
         <div class="vl border-start mx-5 d-none d-lg-block" style="height: 50px;"></div>
-
-
         <div class="col-lg-1 d-flex justify-content-center">
-            <a href="#" class="d-flex align-items-center back-icon">
+            <a href="{{ route(config('custom.fallbackUrl')) }}" class="d-flex align-items-center back-icon">
                 <img src="{{ url('back-icon') }}" alt="Back">
             </a>
         </div>
-
-
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
             aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -29,7 +25,7 @@
                     <a class="nav-link ms-5 {{ request()->routeIs('permissions.*') ? 'active' : '' }}"
                         href="{{ route('permissions.index') }}">Permissions</a>
                 </li>
-                
+
                 <li class="nav-item">
                     <a class="nav-link ms-5 {{ request()->routeIs('permission-groups.*') ? 'active' : '' }}"
                         href="{{ route('permission-groups.index') }}">Permission Group</a>
